@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Special Someone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="landing" class="d-flex align-items-center justify-content-center text-center">
+        <div class="animate__animated animate__fadeIn">
+            <h1 class="display-1 name-text">[HER NAME]</h1>
+            <p class="lead mt-3">Every moment with you is a beautiful story.</p>
+            <button class="btn btn-heart mt-4" onclick="showMemories()">Click Me</button>
+        </div>
+    </section>
+
+    <section id="memories" class="container py-5 d-none">
+        <h2 class="text-center mb-5 section-title animate__animated animate__fadeInDown">Choose a Card</h2>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3">
+                <div class="card memory-card h-100" data-bs-toggle="modal" data-bs-target="#momentModal">
+                    <div class="card-overlay">Click Me</div>
+                    <div class="card-body text-center">
+                        <div class="icon-circle">📸</div>
+                        <h5>Our Happy Moments</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card memory-card h-100" data-bs-toggle="modal" data-bs-target="#flowerModal">
+                    <div class="card-overlay">Click Me</div>
+                    <div class="card-body text-center">
+                        <div class="icon-circle">🌸</div>
+                        <h5>Something Pretty</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card memory-card h-100" data-bs-toggle="modal" data-bs-target="#songModal">
+                    <div class="card-overlay">Click Me</div>
+                    <div class="card-body text-center">
+                        <div class="icon-circle">🎵</div>
+                        <h5>A Song for You</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card memory-card h-100" data-bs-toggle="modal" data-bs-target="#valentineModal">
+                    <div class="card-overlay">Click Me</div>
+                    <div class="card-body text-center">
+                        <div class="icon-circle">💌</div>
+                        <h5>A Special Message</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="momentModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=400" class="img-fluid rounded mb-3" alt="Memory">
+                    <p>This photo captures the exact moment I realized how lucky I am to have you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="flowerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h3 class="name-text">[Flower Name]</h3>
+                    <p>I chose this because it’s your favorite. Much like this flower, you bring color and fragrance to my world every single day.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="songModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-3">Every lyric of this song reminds me of our journey together.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="valentineModal" data-bs-backdrop="static" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="valentineContent">
+                <div class="modal-body text-center" id="mainQuestionArea">
+                    <div id="sadGif" class="mb-3 d-none">
+                        <img src="https://media.giphy.com/media/7SF5scGB2AFrO/giphy.gif" width="150" alt="Sad">
+                    </div>
+                    <h4>You are my greatest blessing.</h4>
+                    <h2 class="my-4">Can I be your Valentine?</h2>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button class="btn btn-success px-4" onclick="acceptValentine()">Yes</button>
+                        <button class="btn btn-danger px-4" id="noBtn" onmouseover="moveNo()" onclick="rejectValentine()">No</button>
+                    </div>
+                </div>
+                
+                <div class="modal-body d-none" id="successArea">
+                    <h2 class="text-center name-text">Yay! See you there! ❤️</h2>
+                    <div class="card bg-light p-3 mt-3">
+                        <h5>Join me for a romantic date</h5>
+                        <p><strong>Time:</strong> 6:00 PM<br><strong>Place:</strong> Vigan City<br><strong>Wear:</strong> Something comfortable but elegant</p>
+                        <hr>
+                        <h6>The Plan:</h6>
+                        <ul class="list-unstyled small">
+                            <li>🕒 5:00 PM - Preparation</li>
+                            <li>🕒 6:00 PM - Meeting at the fountain</li>
+                            <li>🕒 7:00 PM - Dinner Date</li>
+                            <li>🕒 8:30 PM - Stroll along Calle Crisologo</li>
+                            <li>🕒 10:00 PM - Taking you home safely</li>
+                        </ul>
+                    </div>
+                    <p class="mt-4 text-center">"Your presence is my honor. Looking forward to seeing you then."</p>
+                    <p class="text-muted text-center" style="font-size: 0.7rem;">Note: Misunderstandings & quarrels are prohibited! 😉</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
